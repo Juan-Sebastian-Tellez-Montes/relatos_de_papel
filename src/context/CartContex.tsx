@@ -13,7 +13,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
             const existingBook = prevCart.find((item) => item.id === book.id);
             if (existingBook) {
                 return prevCart.map((item) =>
-                    item.id === book.id ? { ...item, quantity: item.quantity + 1 } : item
+                    item.id === book.id ? { ...item, quantity: (item.quantity? item.quantity : 0) + 1 } : item
                 );
             }
             return [...prevCart, { ...book, quantity: 1 }];

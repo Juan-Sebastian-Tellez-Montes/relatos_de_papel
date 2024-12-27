@@ -6,7 +6,7 @@ const Checkout: React.FC = () => {
     const { cart, clearCart } = useCart();
     const navigatePath = useRedirection();
     const handleGoToHome = () => {navigatePath('/home')};
-    const total = cart.reduce((acc, book) => acc + book.price * book.quantity, 0);
+    const total = cart.reduce((acc, book) => acc + book.price * (book.quantity ? book.quantity : 0), 0);
 
     const handleConfirmPurchase = () => {
         if (cart.length === 0) {
@@ -37,7 +37,7 @@ const Checkout: React.FC = () => {
                             <tr key={book.id}>
                                 <td className="text-start">{book.title}</td>
                                 <td className="text-center">{book.quantity}</td>
-                                <td className="text-end">${(book.price * book.quantity).toFixed(2)}</td>
+                                <td className="text-end">${(book.price * (book.quantity ? book.quantity : 0)).toFixed(2)}</td>
                             </tr>
                         ))}
                         </tbody>

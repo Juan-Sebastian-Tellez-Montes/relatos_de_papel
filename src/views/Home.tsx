@@ -42,7 +42,7 @@ const Home: React.FC = () => {
                         <BookCard
                             title={book.title}
                             author={book.author}
-                            image={book.image}
+                            image={book.image ? book.image : ''}
                             onClick={() => handleBookClick(book.id)}
                         />
                     </div>
