@@ -1,0 +1,12 @@
+.cart-container {
+    width: 300px;
+    max-height: 50%;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    top: 20%;
+    right: 50px;
+    zIndex: 1000;
+}
